@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Danish/AndroidStudioProjects/Translator/app/src/main/res/drawable/custom_rounded.xml" value="0.2175" />
+        <entry key="..\:/Users/Danish/AndroidStudioProjects/Translator/app/src/main/res/layout-v28/row_definition.xml" value="0.21739130434782608" />
         <entry key="..\:/Users/Danish/AndroidStudioProjects/Translator/app/src/main/res/layout/activity_main.xml" value="0.21739130434782608" />
         <entry key="..\:/Users/Danish/AndroidStudioProjects/Translator/app/src/main/res/layout/row_definition.xml" value="0.21739130434782608" />
       </map>

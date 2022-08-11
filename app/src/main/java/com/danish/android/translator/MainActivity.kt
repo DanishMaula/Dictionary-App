@@ -1,8 +1,10 @@
 package com.danish.android.translator
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.danish.android.translator.data.DefinitionsItem
@@ -18,15 +20,30 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val actionBar: ActionBar? = supportActionBar
+        actionBar?.hide()
+
         val viewModel = ViewModelProvider(this).get(TranslatorViewModel::class.java)
 
 
         viewModel.searchWord.observe(this){
         Log.i("searchWord","caused  : ${it}")
-           binding.tvWord.text = it.word
-           binding.tvPhonetics.text = it.phonetic
 
-            setupRecyclerView(it)
+
+            if (it != null) {
+                binding.tvWord.text = it.word
+                binding.tvPhonetics.text = it.phonetic
+                setupRecyclerView(it)
+
+            }else
+                Toast.makeText(this, "Word not found", Toast.LENGTH_SHORT).show()
+
+
+            if (it == null){
+                binding.cvDefinition.visibility = android.view.View.INVISIBLE
+            }else{
+                binding.cvDefinition.visibility = android.view.View.VISIBLE
+            }
 
         }
 

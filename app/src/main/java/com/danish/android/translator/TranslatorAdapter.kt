@@ -20,8 +20,7 @@ class TranslatorAdapter(): RecyclerView.Adapter<TranslatorAdapter.TranslatorView
 
     override fun onBindViewHolder(holder: TranslatorViewHolder, position: Int) {
         holder.binding.apply {
-            tvDefinition.text =
-                listTranslator[position].definition ?: ""
+            tvDefinition.text = listTranslator[position].definition
         }
     }
 
